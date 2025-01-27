@@ -30,13 +30,23 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Debug.Log("Play button pressed, loading game...");
-        SceneManager.UnloadSceneAsync("SampleScene"); // Load the game scene
 
-        SceneManager.LoadSceneAsync("SampleScene");
-        audioManager.PlaySFX(audioManager.menuSFX);
+        // Ensure you're not unloading and loading the same scene at the same time
+        if (SceneManager.GetActiveScene().name != "SampleScene")
+        {
+            SceneManager.LoadSceneAsync("SampleScene"); // Load the desired scene
+        }
+        else
+        {
+            Debug.LogWarning("SampleScene is already active. Skipping reload.");
+        }
 
+        // Play sound effect
+        if (audioManager != null)
+        {
+            audioManager.PlaySFX(audioManager.menuSFX);
+        }
     }
-
     public void ShowAbout()
     {
         Debug.LogWarning("About button pressed, showing about panel...");

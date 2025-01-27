@@ -4,7 +4,7 @@ using TMPro;  // For TextMeshPro
 
 public class EndTrigger : MonoBehaviour
 {
-    public string mainMenu = "Main Menu";
+    // public string mainMenu = "Main Menu";
 
     // References to UI elements
     [SerializeField] private GameObject winPanel;    // The panel holding "You Win!" message and buttons
@@ -47,13 +47,13 @@ public class EndTrigger : MonoBehaviour
         audioManager.PlaySFX(audioManager.menuSFX);
         Time.timeScale = 1;
     }
-    public void Menu()
-    {
-        SceneManager.LoadScene("MainMenuScene");
-        audioManager.PlaySFX(audioManager.menuSFX);
-        Time.timeScale = 1;
+    // public void Menu()
+    // {
+    //     SceneManager.LoadScene("MainMenuScene");
+    //     audioManager.PlaySFX(audioManager.menuSFX);
+    //     Time.timeScale = 1;
 
-    }
+    // }
     public void OnApplicationQuit()
     {
         Application.Quit();
