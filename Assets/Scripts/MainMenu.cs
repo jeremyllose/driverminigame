@@ -11,6 +11,12 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject mainMenuPanel; // Main menu UI
     [SerializeField] private GameObject aboutPanel;    // About UI
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -26,6 +32,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Play button pressed, loading game...");
         SceneManager.LoadSceneAsync("SampleScene"); // Load the game scene
+        audioManager.PlaySFX(audioManager.menuSFX);
 
     }
 
@@ -39,7 +46,7 @@ public class MainMenu : MonoBehaviour
 
         if (aboutPanel != null)
             aboutPanel.SetActive(true);
-
+        audioManager.PlaySFX(audioManager.menuSFX);
     }
 
     public void BackToMainMenu()
@@ -52,11 +59,13 @@ public class MainMenu : MonoBehaviour
 
         if (mainMenuPanel != null)
             mainMenuPanel.SetActive(true);
+        audioManager.PlaySFX(audioManager.menuSFX);
     }
 
     public void Quit()
     {
         Debug.Log("Quit button pressed, exiting application...");
+        audioManager.PlaySFX(audioManager.menuSFX);
         Application.Quit();
     }
 }

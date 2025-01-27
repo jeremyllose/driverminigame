@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
+
+    AudioManager audioManager;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public static Finish Instance;
@@ -17,6 +22,8 @@ public class Finish : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +34,8 @@ public class Finish : MonoBehaviour
             Debug.Log("Player reached the finish line!");
             // Activate the win menu
             winMenu.SetActive(true);
+            audioManager.PlaySFX(audioManager.VictorySFX);
         }
+        
     }
 }

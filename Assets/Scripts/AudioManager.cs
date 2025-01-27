@@ -3,8 +3,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
+    [Header("Audio Music")]
     public AudioSource mainMenuMusic; // Assign in Inspector
     public AudioSource gameMusic;     // Assign in Inspector
+
+    [Header("Audio SFX")]
+    [SerializeField] AudioSource SFXSource;
+
+    public AudioClip menuSFX;
+    public AudioClip CarSFX;
+    public AudioClip ExplosionSFX;
+    public AudioClip PowerUpSFX;
+    public AudioClip VictorySFX;
+    public AudioClip DefeatSFX;
 
     private void Awake()
     {
@@ -83,4 +94,10 @@ public class AudioManager : MonoBehaviour
         // Start music transition with a small delay after the scene is loaded
         StartCoroutine(TransitionMusicAfterDelay(0.5f)); // Adjust delay if needed
     }
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+        
+    }
+    
 }

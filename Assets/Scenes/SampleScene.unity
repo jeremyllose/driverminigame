@@ -3999,6 +3999,8 @@ GameObject:
   - component: {fileID: 348277468}
   - component: {fileID: 348277467}
   - component: {fileID: 348277466}
+  - component: {fileID: 348277471}
+  - component: {fileID: 348277470}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4089,6 +4091,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &348277470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348277465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6818a5288b156458f079516f29d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 0.5
+--- !u!114 &348277471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348277465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be3c27097d7647478885aed42f14be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 0.5
 --- !u!1 &355012773
 GameObject:
   m_ObjectHideFlags: 0
@@ -4636,8 +4668,8 @@ GameObject:
   - component: {fileID: 401138881}
   - component: {fileID: 401138880}
   - component: {fileID: 401138879}
-  - component: {fileID: 401138878}
   - component: {fileID: 401138877}
+  - component: {fileID: 401138882}
   m_Layer: 0
   m_Name: Money (1)
   m_TagString: Untagged
@@ -4691,21 +4723,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 2.66}
   m_EdgeRadius: 0
---- !u!114 &401138878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 401138876}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c81ae621ca2c948a585645848c88bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  slowDuration: 2
-  speedMultiplier: 1.5
 --- !u!50 &401138879
 Rigidbody2D:
   serializedVersion: 5
@@ -4803,6 +4820,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &401138882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401138876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be3c27097d7647478885aed42f14be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 1.5
 --- !u!1 &415163373
 GameObject:
   m_ObjectHideFlags: 0
@@ -6096,8 +6128,8 @@ GameObject:
   - component: {fileID: 553709997}
   - component: {fileID: 553709996}
   - component: {fileID: 553709995}
-  - component: {fileID: 553709994}
   - component: {fileID: 553709993}
+  - component: {fileID: 553709998}
   m_Layer: 0
   m_Name: CarSlow
   m_TagString: Untagged
@@ -6151,21 +6183,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 2.66}
   m_EdgeRadius: 0
---- !u!114 &553709994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553709992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c81ae621ca2c948a585645848c88bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  slowDuration: 2
-  speedMultiplier: 0.5
 --- !u!50 &553709995
 Rigidbody2D:
   serializedVersion: 5
@@ -6248,21 +6265,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &553709997
-Transform:
+--- !u!224 &553709997
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553709992}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.68001, y: 270.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6125, y: 0.695625, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 106.68001, y: 270.2}
+  m_SizeDelta: {x: 1.77, y: 3.55}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &553709998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553709992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6818a5288b156458f079516f29d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 0.5
 --- !u!1 &562768908
 GameObject:
   m_ObjectHideFlags: 0
@@ -7457,7 +7493,6 @@ MonoBehaviour:
   gameSceneName: GameScene
   mainMenuPanel: {fileID: 0}
   aboutPanel: {fileID: 0}
-  aboutText: {fileID: 0}
 --- !u!114 &669423823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12466,8 +12501,8 @@ GameObject:
   - component: {fileID: 1005418815}
   - component: {fileID: 1005418814}
   - component: {fileID: 1005418813}
-  - component: {fileID: 1005418812}
   - component: {fileID: 1005418811}
+  - component: {fileID: 1005418816}
   m_Layer: 0
   m_Name: Money (2)
   m_TagString: Untagged
@@ -12521,21 +12556,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 2.66}
   m_EdgeRadius: 0
---- !u!114 &1005418812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005418810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c81ae621ca2c948a585645848c88bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  slowDuration: 2
-  speedMultiplier: 2
 --- !u!50 &1005418813
 Rigidbody2D:
   serializedVersion: 5
@@ -12633,6 +12653,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005418816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005418810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be3c27097d7647478885aed42f14be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 3
 --- !u!1 &1037164126
 GameObject:
   m_ObjectHideFlags: 0
@@ -13680,8 +13715,8 @@ GameObject:
   - component: {fileID: 1111802179}
   - component: {fileID: 1111802178}
   - component: {fileID: 1111802176}
-  - component: {fileID: 1111802180}
   - component: {fileID: 1111802181}
+  - component: {fileID: 1111802182}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -13786,21 +13821,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1111802180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1111802175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c81ae621ca2c948a585645848c88bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  slowDuration: 2
-  speedMultiplier: 1.5
 --- !u!61 &1111802181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13847,6 +13867,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 2.66}
   m_EdgeRadius: 0
+--- !u!114 &1111802182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111802175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1be3c27097d7647478885aed42f14be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 1.5
 --- !u!1 &1117019005
 GameObject:
   m_ObjectHideFlags: 0
@@ -15828,8 +15863,8 @@ GameObject:
   - component: {fileID: 1260511870}
   - component: {fileID: 1260511869}
   - component: {fileID: 1260511868}
-  - component: {fileID: 1260511867}
   - component: {fileID: 1260511866}
+  - component: {fileID: 1260511871}
   m_Layer: 0
   m_Name: CarSlow (1)
   m_TagString: Untagged
@@ -15883,21 +15918,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 2.66}
   m_EdgeRadius: 0
---- !u!114 &1260511867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260511865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c81ae621ca2c948a585645848c88bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  slowDuration: 2
-  speedMultiplier: 0.5
 --- !u!50 &1260511868
 Rigidbody2D:
   serializedVersion: 5
@@ -15995,6 +16015,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -22.816}
+--- !u!114 &1260511871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260511865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6818a5288b156458f079516f29d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 0.5
 --- !u!1 &1272716594
 GameObject:
   m_ObjectHideFlags: 0
@@ -23982,8 +24017,8 @@ GameObject:
   - component: {fileID: 1911845386}
   - component: {fileID: 1911845385}
   - component: {fileID: 1911845384}
-  - component: {fileID: 1911845383}
   - component: {fileID: 1911845382}
+  - component: {fileID: 1911845387}
   m_Layer: 0
   m_Name: CarSlow (2)
   m_TagString: Untagged
@@ -24037,21 +24072,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.66, y: 2.66}
   m_EdgeRadius: 0
---- !u!114 &1911845383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1911845381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7c81ae621ca2c948a585645848c88bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTag: Player
-  slowDuration: 2
-  speedMultiplier: 0.5
 --- !u!50 &1911845384
 Rigidbody2D:
   serializedVersion: 5
@@ -24149,6 +24169,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180.455}
+--- !u!114 &1911845387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911845381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6818a5288b156458f079516f29d437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  slowDuration: 2
+  speedMultiplier: 0.5
 --- !u!1 &1934773663
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,16 @@
 using UnityEngine;
 
-public class SpeedModifier : MonoBehaviour
+public class SpeedBoost : MonoBehaviour
 {
-    [SerializeField] private string playerTag = "Player";  
+    [SerializeField] private string playerTag = "Player";
     [SerializeField] private float slowDuration = 2f; // Duration to slow the player
     [SerializeField] private float speedMultiplier = 0.5f; // Speed multiplier (e.g., 0.5 reduces speed by half)
 
+    AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag(playerTag))
@@ -14,6 +19,7 @@ public class SpeedModifier : MonoBehaviour
 
             // Destroy the object this script is attached to after 0.5 seconds
             Destroy(gameObject, 0.5f);
+            audioManager.PlaySFX(audioManager.PowerUpSFX);
 
             // Get the Driver component from the player and slow down the player
             Driver driver = collision.gameObject.GetComponent<Driver>();
