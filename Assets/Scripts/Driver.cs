@@ -7,11 +7,19 @@ public class Driver : MonoBehaviour
 
     private float originalMoveSpeed;
     [SerializeField] private float speedMultiplier = 1f;
-
+    [SerializeField] private float carSoundVolume = 0.5f;
     AudioManager audioManager;
+    private bool isMoving = false;
+    private AudioSource carAudioSource;
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+        // Create a new AudioSource for the car sound
+        carAudioSource = gameObject.AddComponent<AudioSource>();
+        carAudioSource.clip = audioManager.CarSFX; // Assign the car sound
+        carAudioSource.loop = true;               // Make it loop
+        carAudioSource.playOnAwake = false;       // Don’t play it immediately
     }
 
 
@@ -35,8 +43,31 @@ public class Driver : MonoBehaviour
 
         transform.Rotate(0, 0, -modifiedRotate);
         transform.Translate(0, modifiedUpAndDown, 0);
+
+        // Determine if the car is moving
+        if (Mathf.Abs(modifiedRotate) > 0 || Mathf.Abs(modifiedUpAndDown) > 0)
+        {
+            // If the car is moving, play the car sound
+            if (!carAudioSource.isPlaying)
+            {
+                carAudioSource.Play();
+            }
+
+            // Adjust pitch based on speed
+            float speed = Mathf.Abs(modifiedUpAndDown);
+            carAudioSource.pitch = Mathf.Lerp(1f, 2f, speed / moveSpeed); // Smooth pitch adjustment
+        }
+        else
+        {
+            // Stop the sound if the car is not moving
+            if (carAudioSource.isPlaying)
+            {
+                carAudioSource.Stop();
+            }
+        }
     }
-    
+
+
     // Method to change speed multiplier
     public void SetSpeedMultiplier(float multiplier)
     {
