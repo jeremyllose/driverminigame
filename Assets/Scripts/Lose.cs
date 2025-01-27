@@ -35,6 +35,7 @@ public class Lose : MonoBehaviour
             // Activate the win menu
             loseMenu.SetActive(true);
             audioManager.PlaySFX(audioManager.DefeatSFX);
+            Time.timeScale = 0;
         }
         
     }

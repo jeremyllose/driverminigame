@@ -17,7 +17,6 @@ public class MainMenu : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
-
     private void Start()
     {
         // Initially show only the main menu
@@ -31,7 +30,9 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Debug.Log("Play button pressed, loading game...");
-        SceneManager.LoadSceneAsync("SampleScene"); // Load the game scene
+        SceneManager.UnloadSceneAsync("SampleScene"); // Load the game scene
+
+        SceneManager.LoadSceneAsync("SampleScene");
         audioManager.PlaySFX(audioManager.menuSFX);
 
     }

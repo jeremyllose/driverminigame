@@ -33,6 +33,7 @@ public class EndTrigger : MonoBehaviour
             // Show the win panel
             if (winPanel != null)
                 winPanel.SetActive(true);
+            Time.timeScale = 0;
 
             // Show the "You Win!" message
             if (winText != null)
@@ -44,11 +45,13 @@ public class EndTrigger : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         audioManager.PlaySFX(audioManager.menuSFX);
+        Time.timeScale = 1;
     }
     public void Menu()
     {
         SceneManager.LoadScene("MainMenuScene");
         audioManager.PlaySFX(audioManager.menuSFX);
+        Time.timeScale = 1;
 
     }
     public void OnApplicationQuit()
