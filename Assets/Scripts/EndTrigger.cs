@@ -6,7 +6,7 @@ public class EndTrigger : MonoBehaviour
 {
     // public string mainMenu = "Main Menu";
 
-    // References to UI elements
+    // References to UI elements    
     [SerializeField] private GameObject winPanel;    // The panel holding "You Win!" message and buttons
     [SerializeField] private TextMeshProUGUI winText; // The text component for "You Win!"
     [SerializeField] private GameObject retryButton;  // The retry button UI

@@ -317,6 +317,7 @@ MonoBehaviour:
   PowerUpSFX: {fileID: 8300000, guid: 01f272411ff135f4a9fc6e038f7e52a6, type: 3}
   VictorySFX: {fileID: 8300000, guid: d0a2732ff4010a740aa6fa1e309c15e6, type: 3}
   DefeatSFX: {fileID: 8300000, guid: 6eeb4a17411be394d8da2495f9c8a96a, type: 3}
+  ThankYouSFX: {fileID: 8300000, guid: 2ce47fc9c32dba142b4af2d078bf77b9, type: 3}
 --- !u!1 &463926193
 GameObject:
   m_ObjectHideFlags: 0

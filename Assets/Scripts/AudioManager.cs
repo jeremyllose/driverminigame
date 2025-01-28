@@ -17,6 +17,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip VictorySFX;
     public AudioClip DefeatSFX;
 
+    public AudioClip ThankYouSFX;
+
+    [System.Obsolete]
     private void Awake()
     {
         // Prevent multiple instances of AudioManager in the scene
