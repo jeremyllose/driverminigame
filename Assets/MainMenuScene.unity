@@ -312,7 +312,7 @@ MonoBehaviour:
   gameMusic: {fileID: 1929496338}
   SFXSource: {fileID: 891455842}
   menuSFX: {fileID: 8300000, guid: 672a60dc8cc1d8d48a867ec3558df409, type: 3}
-  CarSFX: {fileID: 8300000, guid: 8b775a18c865dea4a95d86515d6a2636, type: 3}
+  CarSFX: {fileID: 8300000, guid: a1000a395b2bbed4a93bdad28523cacc, type: 3}
   ExplosionSFX: {fileID: 8300000, guid: fca87ba26b65477409f74544d3992a60, type: 3}
   PowerUpSFX: {fileID: 8300000, guid: 01f272411ff135f4a9fc6e038f7e52a6, type: 3}
   VictorySFX: {fileID: 8300000, guid: d0a2732ff4010a740aa6fa1e309c15e6, type: 3}
@@ -740,7 +740,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -879,7 +879,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349, y: 211}
+  m_AnchoredPosition: {x: 343, y: 201}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1004291556
